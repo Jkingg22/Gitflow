@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Gestión de Tareas</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="formulario">
+      <h2>Agregar Tarea</h2>
+      <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre"><br>
+
+        <label for="fecha">Fecha Límite:</label>
+        <input type="date" id="fecha" name="fecha"><br>
+
+        <label for="prioridad">Prioridad:</label>
+        <select id="prioridad" name="prioridad">
+          <option value="alta">Alta</option>
+          <option value="media">Media</option>
+          <option value="baja">Baja</option>
+        </select><br>
+
+        <label for="descripcion">Descripción:</label><br>
+        <textarea id="descripcion" name="descripcion" rows="4" cols="50"></textarea><br>
+
+        <input type="button" value="Agregar Tarea" onclick="agregarTarea()">
+      </form>
+    </div>
+
+    <div id="lista-tareas">
+      <h2>Lista de Tareas</h2>
+      <table id="tabla-tareas">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Fecha Límite</th>
+            <th>Prioridad</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpo-tabla">
+        </tbody>
+      </table>
+    </div>
+
+    <div id="editar-tarea" style="display: none;">
+      <h2>Editar Tarea</h2>
+      <form>
+        <input type="hidden" id="indice">
+        <label for="nombre-editar">Nombre:</label>
+        <input type="text" id="nombre-editar" name="nombre-editar"><br>
+
+        <label for="fecha-editar">Fecha Límite:</label>
+        <input type="date" id="fecha-editar" name="fecha-editar"><br>
+
+        <label for="prioridad-editar">Prioridad:</label>
+        <select id="prioridad-editar" name="prioridad-editar">
+          <option value="alta">Alta</option>
+          <option value="media">Media</option>
+          <option value="baja">Baja</option>
+        </select><br>
+
+        <label for="descripcion-editar">Descripción:</label><br>
+        <textarea id="descripcion-editar" name="descripcion-editar" rows="4" cols="50"></textarea><br>
+
+        <input type="button" value="Actualizar Tarea" onclick="actualizarTarea()">
+      </form>
+    </div>
+
+    <div id="buscar-tarea">
+      <h2>Buscar Tarea</h2>
+      <input type="text" id="busqueda" name="busqueda" onkeyup="buscarTarea()">
+      <table id="tabla-busqueda">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Fecha Límite</th>
+            <th>Prioridad</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="cuerpo-busqueda">
+    </tbody>
+  </table>
+</div>
+
+<script src="script.js"></script>
+  </body>
+</html>
